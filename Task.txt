@@ -1,0 +1,46 @@
+﻿Task 1:
+Please create a free account and public Git repository on GitHub for this test.
+The solution for each question should be committed to different branches.
+You are encouraged to make incremental commits, rather than commit everything once the solutions are finished.
+You should also write down your assumptions.
+Bonus: create unit tests to verify your solutions.
+
+1. Write a script that accepts a positive integer range and, for each increment in the range, prints:
+   - "Fizz" if a multiple of 3
+   - "Buzz" if a multiple of 5
+   - The integer itself otherwise.
+   
+   E.g. for f[12..16], the output is "Fizz 13 14 FizzBuzz 16".
+
+2. Do the same as question 1, except in addition to the previous rules, now it prints "Bazz" instead of an integer after consecutive Fizzes/Buzzes.
+
+  E.g. for f[4..11], the output is “4 Buzz Fizz Bazz 8 Fizz Buzz Bazz”.
+									
+
+Task 2:
+
+Assumptions:
+1. The webserver has been configured correctly to direct the URL specify below to getinfo.php.
+2. The Mysql Server has been configured and running.
+
+Please raise at least 10 suggestions/corrections about these codes.
+
+
+data.sql
+- 	Can't create table 'HDB' 
+	Reason: InnoDB engine generates an error, it should MyISAM
+- 	Can't create table 'Condo' 
+	Reason: -	InnoDB engine generates an error, it should MyISAM
+			-	Incorrect table definition, there can be only one auto column and it must be defined as a key
+
+getinfo.php
+-	unexpected ')' in getinfo.php on line 4
+-	Can't use function return value in write context in getinfo.php on line 8
+	if (is_object($data) == true) $status = '200 OK';		
+-	Class 'dataObj' not found in getinfo.php on line 6
+-	Can't use $ArrayURL[1] as parameter because $ArrayURL[1] = domain. Replace $ArrayURL[1] with $_GET["param"]
+
+data.php
+-	Call to a member function fetch_assoc() on a non-object in data.php on line 23
+-	private $table = null; must be defined
+-	SELECT * FROM $table WHERE ID = $id (replace $table with $this->table)
