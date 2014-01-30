@@ -2,7 +2,7 @@
 	header('Content-Type: text/plain');
 	
 	$name = array('3'	=> 'Fizz',
-				  '5'	=> 'Buzz');
+		      '5'	=> 'Buzz');
 	
 	echo "RESULT FROM FIRST TASK\n\r";
 	echo task1(12,16,3,5,$name)."\n";
